@@ -1,0 +1,30 @@
+.parentButon {
+  display: flex;
+  justify-content: space-between;
+  transform: translate3d(0, 150px, 0);
+}
+.envoiCaisseZero {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  transform: translate3d(0, 20px, 0);
+  padding: 11px;
+  height: 40px;
+  border: none;
+  background-color: brown;
+  border-radius: 10px;
+  cursor: pointer;
+  line-height: 40px;
+  display: flex;
+  margin: auto;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+.envoiFormulaireLeftRight {
+  text-decoration: none;
+  color: white;
+}
+.envoiFormulaireLeft {
+  text-decoration: none;
+  color: white;
+}

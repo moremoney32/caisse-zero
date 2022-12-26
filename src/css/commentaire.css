@@ -1,0 +1,34 @@
+.controlsCommentatire {
+  transform: translate3d(0, 300px, 0);
+  padding-top: 100px;
+}
+
+.commentaire {
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 75%,
+    75% 75%,
+    75% 100%,
+    50% 75%,
+    0% 75%
+  );
+  width: 100%;
+  height: 200px;
+  background: brown;
+  color: white;
+  border-radius: 25px;
+  transition: transform ease 0.4s, box-shadow ease 0.4s;
+}
+.commentaire:hover {
+  transform: translate3d(0, -7px, 0);
+  box-shadow: 1px 13px 24px -22px rgba(0, 0, 0, 0.9);
+}
+
+.sous-controlsCommentatire {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  text-align: center;
+  padding-top: 20px;
+}

@@ -1,0 +1,10 @@
+.basSection-h2 {
+  color: #e53935;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.basSection-h2-h2-p {
+  color: darkgray;
+}

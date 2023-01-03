@@ -1,4 +1,5 @@
 /*******
+ * composant qui s occupe des commentaires des clients
  * */
 
 import "../css/commentaire.css";
@@ -13,7 +14,6 @@ export function Commentaire() {
     margin: "auto",
     display: "flex",
     flexDirection: "column",
-    paddingLeft: "40px",
   };
 
   const sectionh2 = {
@@ -21,15 +21,15 @@ export function Commentaire() {
     transform: "translate3d(0, 15px, 0)",
   };
   return (
-    <div className="controlsCommentatire">
+    <div className="controlsCommentaire">
       <Information
         text="what they say about us"
         basSection={Section}
         sectionh2={sectionh2}
       />
-      <div className="sous-controlsCommentatire">
+      <div className="sous-controlsCommentaire">
         <div className="commentaire">
-          <p>
+          <p className="commentaireparagraphe">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
             excepturi eveniet qui veniam nobis dicta provident odio? Voluptates
             totam quaerat incidunt porro suscipit earum iure nesciunt fugit quia
@@ -38,7 +38,7 @@ export function Commentaire() {
           </p>
         </div>
         <div className="commentaire">
-          <p>
+          <p className="commentaireparagraphe">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
             excepturi eveniet qui veniam nobis dicta provident odio? Voluptates
             totam quaerat incidunt porro suscipit earum iure nesciunt fugit quia
@@ -47,7 +47,7 @@ export function Commentaire() {
           </p>
         </div>
         <div className="commentaire">
-          <p>
+          <p className="commentaireparagraphe">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
             excepturi eveniet qui veniam nobis dicta provident odio? Voluptates
             totam quaerat incidunt porro suscipit earum iure nesciunt fugit quia
@@ -56,7 +56,7 @@ export function Commentaire() {
           </p>
         </div>
         <div className="commentaire">
-          <p>
+          <p className="commentaireparagraphe">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
             excepturi eveniet qui veniam nobis dicta provident odio? Voluptates
             totam quaerat incidunt porro suscipit earum iure nesciunt fugit quia
@@ -65,7 +65,7 @@ export function Commentaire() {
           </p>
         </div>
         <div className="commentaire">
-          <p>
+          <p className="commentaireparagraphe">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
             excepturi eveniet qui veniam nobis dicta provident odio? Voluptates
             totam quaerat incidunt porro suscipit earum iure nesciunt fugit quia
@@ -74,7 +74,7 @@ export function Commentaire() {
           </p>
         </div>
         <div className="commentaire">
-          <p>
+          <p className="commentaireparagraphe">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
             excepturi eveniet qui veniam nobis dicta provident odio? Voluptates
             totam quaerat incidunt porro suscipit earum iure nesciunt fugit quia

@@ -1,13 +1,11 @@
 /*****
- *
+ *composant qui s occupe de l inscription
  */
 import "../css/inscription.css";
 import "../css/formulaire.css";
 import { Formulaire } from "./Formulaire.js";
 import { Label } from "./Label.js";
 import close from "../images/close.svg";
-import { Button } from "./Button.js";
-//import { formulaire } from "./formulaire.js";
 export function Inscription() {
   function formulaire() {
     let connect = document.querySelector(".connexionn");
@@ -18,7 +16,7 @@ export function Inscription() {
     connect.style.display = "block";
     connect.style.zIndex = 10000;
   }
-  //formulaire();
+
   const button = {
     fontSize: "20px",
     fontWeight: "bold",
@@ -68,7 +66,6 @@ export function Inscription() {
 "
         confirmMdp="Confirmation Mdp
 "
-        // enter="Compte Utilisateur"
         close={close}
       />
       <Label
@@ -77,32 +74,6 @@ export function Inscription() {
 "
         close={close}
       />
-
-      {/* <div className="formulaire">
-        <form className="connexion" method="post">
-          <div className="space">
-            <label for="email">email</label>
-            <input
-              type="text"
-              name="keyemail"
-              id="email"
-              className="keyemail"
-            />
-          </div>
-          <div className="space">
-            <label for="keyPassword">mot de passe</label>
-            <input
-              type="text"
-              name="password"
-              id="keyPassword"
-              className="password"
-            />
-          </div>
-          <div className="envoiFormulaire">
-            <span className="envoiFormulaireLeft">Compte Utilisateur</span>
-          </div>
-        </form>
-      </div> */}
     </div>
   );
 }

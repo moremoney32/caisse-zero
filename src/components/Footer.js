@@ -1,5 +1,5 @@
 /****
- *
+ *composant qui gere le footer de cazisse zero
  */
 import "../css/acess.css";
 import logoCaisse from "../images/logoCaisse.png";

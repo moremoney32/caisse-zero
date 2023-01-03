@@ -1,5 +1,5 @@
 /****
- *
+ * composant qui gere les contacts
  */
 import { Information } from "./Information";
 import "../css/information.css";
@@ -20,7 +20,6 @@ export function ContactCaisseZero() {
     margin: "auto",
     display: "flex",
     flexDirection: "column",
-    paddingLeft: "40px",
   };
 
   const sectionh2 = {
@@ -42,7 +41,7 @@ export function ContactCaisseZero() {
           <div className="formContact">
             <div className="sous-formContact">
               <span className="formContactColorLeft">NUMERO MOBILE :</span>
-              <span className="formContactColorRight">+22456668979555</span>
+              <span className="formContactColorRight">+22356668979555</span>
               <img src={photomobile} alt="" className="mobile" />
             </div>
             <div className="sous-formContact">
@@ -69,4 +68,3 @@ export function ContactCaisseZero() {
     </div>
   );
 }
-//our various contacts

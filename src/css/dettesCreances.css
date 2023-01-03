@@ -1,0 +1,149 @@
+.dettescreances {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  transform: translate3d(0, 100px, 0);
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.newdettescreances {
+  display: flex;
+  margin: auto;
+  font-size: 30px;
+}
+.transactionsnumber {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.transactionsnumberspan {
+  font-size: 25px;
+  color: aqua;
+}
+.controldate {
+  display: flex;
+  gap: 45px;
+}
+.transactionsdate {
+  font-size: 25px;
+}
+.detailstilte {
+  display: flex;
+  justify-content: space-between;
+  color: violet;
+  font-size: 25px;
+}
+.table {
+  padding: 10px;
+  border: 2px solid violet;
+  line-height: 35px;
+  border-collapse: collapse;
+}
+td {
+  font-size: 25px;
+}
+
+.tdlast {
+  text-align: right !important;
+}
+.tdsecond {
+  background: aqua;
+  color: white;
+  text-align: center;
+}
+tr:hover td {
+  color: #000000;
+  font-weight: bold;
+  cursor: pointer;
+}
+table {
+  padding: 25px;
+  border: 2px solid violet;
+}
+.td1 {
+  color: white;
+  background: darkgray;
+}
+.tdsecondo {
+  text-align: center;
+}
+.tr1 {
+  background: red;
+}
+.controlequilibreleft {
+  width: 30px !important;
+  height: 30px !important;
+}
+.controlLeft {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.controlequilibrecenter {
+  font-size: 30px;
+  color: violet;
+}
+.controlequilibreright {
+  background: violet;
+  color: white;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: 1px solid black;
+  font-size: 25px;
+}
+.controlCenterLeft {
+  color: aqua;
+  font-size: 25px;
+}
+.controlCenterRight {
+  width: 30px !important;
+  height: 30px !important;
+}
+.controlCenter {
+  display: flex;
+  gap: 15px;
+}
+.controlfooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.controlRightspan {
+  color: black;
+  font-size: 25px;
+}
+.controlRightspanLeft {
+  color: white;
+  background: aqua;
+  padding: 10px;
+  font-size: 18px;
+}
+.controlRight {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+.sous-controlRight {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.containcontroldate {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.buttontransactionfacture {
+  padding: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
+  color: black;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  background: darkgray;
+}

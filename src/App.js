@@ -3,11 +3,16 @@ import React from "react";
 import { AcessApplication } from "./pages/AcessApplication";
 import { IdentificationCaisseZero } from "./pages/IdentificationCaisseZero";
 import { CompteZero } from "./pages/CompteZero";
-import { BrowserRouter, Routes, Route, link } from "react-router-dom";
+import { HandleUser } from "./pages/HandleUser";
+import { MenuApplication } from "./pages/MenuApplication";
+import { CompteZeroExistant } from "./pages/CompteZeroExistant";
+import { DettesCreances } from "./pages/DettesCreances";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ControlsCard } from "./components/ControlsCards";
 import { ContactCaisseZero } from "./components/ContactCaisseZero";
 import { Commentaire } from "./components/Commentaires";
 import { Inscription } from "./components/Inscription";
+import { RembDettes } from "./pages/RembDettes";
 
 export function App() {
   return (
@@ -19,12 +24,16 @@ export function App() {
           <Route path="/commentaire" element={<Commentaire />} />
           <Route path="/Inscription" element={<Inscription />} />
           <Route path="/AcessApplication" element={<AcessApplication />} />
+          <Route path="/MenuAplication" element={<MenuApplication />} />
+          <Route path="/DettesCreances" element={<DettesCreances />} />
+          <Route path="/REMBDETTES" element={<RembDettes />} />
           <Route
             path="/compteZeroNouveau"
             element={<IdentificationCaisseZero />}
           />
+          <Route path="/handleuser" element={<HandleUser />} />
           <Route path="/compteZero" element={<CompteZero />} />
-          <Route path="/compteZeroExistant" element={<CompteZero />} />
+          <Route path="/compteZeroExistant" element={<CompteZeroExistant />} />
           <Route path="/controls" element={<ControlsCard />} />
         </Routes>
       </div>

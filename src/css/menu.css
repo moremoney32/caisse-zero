@@ -1,0 +1,71 @@
+.menuPrincipalUser {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  transform: translate3d(0, 100px, 0);
+  position: relative;
+}
+.sous-menuPrincipalUser {
+  display: flex;
+  justify-content: space-between;
+}
+h4 {
+  font-size: 25px;
+}
+.containmenuPrincipalUser {
+  width: 500px;
+  padding: 50px;
+  /* background: red; */
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.menuPrincipalUsericon {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  width: 150px;
+}
+.Usericonmenu {
+  width: 35px !important;
+  height: 35px !important;
+  background: blue;
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+  color: white;
+}
+.Usericonmenugestion {
+  width: 35px !important;
+  height: 35px !important;
+  background: blueviolet;
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+  color: white;
+}
+.Usericonmenureports {
+  width: 35px !important;
+  height: 35px !important;
+  background: black;
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+  color: white;
+}
+.Usericonmenutabord {
+  width: 35px !important;
+  height: 35px !important;
+  background: green;
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+  color: white;
+}
+.Usericonmenuspan {
+  color: darkgray;
+}
+.Usericonmenuspangestion {
+  color: black;
+}

@@ -3,14 +3,13 @@
  */
 
 import flecheMain from "../images/flecheMain.svg";
+import up from "../images/up.svg";
 import logoCaisse from "../images/logoCaisse.png";
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 export function NavBar() {
-  function changes() {
-    let blocContenair = document.querySelector(".blocFlecheMain");
-    blocContenair.style.display = "block";
-  }
+  const [showed, setShowed] = useState(false);
   return (
     <div className="sous-contenairAcess">
       <img src={logoCaisse} alt="" />
@@ -28,8 +27,24 @@ export function NavBar() {
           Ce qu 'ils disent de nous
         </NavLink>
         <NavLink className="accueil">Pricing...</NavLink>
-        <img src={flecheMain} alt="" className="flecheMain" onClick={changes} />
-        <div className="blocFlecheMain">
+        <img
+          src={flecheMain}
+          alt=""
+          className="flecheMain"
+          style={showed ? { display: "none" } : { display: "block" }}
+          onClick={(e) => setShowed(true)}
+        />
+        <img
+          src={up}
+          alt=""
+          className="flecheUp"
+          style={showed ? { display: "block" } : { display: "none" }}
+          onClick={(e) => setShowed(false)}
+        />
+        <div
+          className="blocFlecheMain"
+          style={showed ? { display: "block" } : { display: "none" }}
+        >
           <NavLink to="/Inscription" className="connexion">
             <p className="brown">Se connecter</p>
           </NavLink>

@@ -14,7 +14,6 @@ import { Footer } from "../components/Footer.js";
 
 export function AcessApplication() {
   const section = {
-    textAlign: "center",
     width: "35%",
     display: "flex",
     flexDirection: "column",

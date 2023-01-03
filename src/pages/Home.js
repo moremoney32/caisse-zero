@@ -1,5 +1,5 @@
 /****
- * component that manages the home page of the zero cash site */
+ * page that manages the home page of the zero cash site */
 
 import caisseimage from "../images/caisseimage.png";
 import "../css/home.css";

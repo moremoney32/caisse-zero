@@ -9,8 +9,7 @@ import { Footer } from "../components/Footer.js";
 import { EmailButton } from "../components/EmailButton";
 import { NavLink } from "react-router-dom";
 import "../css/home.css";
-import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
-import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
+
 export function HandleUser() {
   return (
     <div className="contenairAcess">

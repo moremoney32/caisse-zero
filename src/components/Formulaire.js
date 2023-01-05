@@ -9,12 +9,19 @@ import { useNavigate } from "react-router-dom";
 
 export function Formulaire({ email, mdp, confirmMdp, enter, close }) {
   const navigate = useNavigate();
+
   function closeModal() {
+    let comment = document.querySelector(".sous-controlsCommentaire");
     let connect = document.querySelector(".connexionn");
+    let footer = document.querySelector(".Footer");
+    let bouttonRight = document.querySelector(".buttonInscriptionRight");
 
     let bouttonLeft = document.querySelector(".buttonInscriptionLeft");
     bouttonLeft.style.display = "block";
     connect.style.display = "none";
+    comment.style.opacity = 1;
+    footer.style.display = "block";
+    bouttonRight.style.display = "block";
   }
   const initValues = { email: "", password: "", confirmpassword: "" };
   const [formValues, setFormValues] = useState(initValues);

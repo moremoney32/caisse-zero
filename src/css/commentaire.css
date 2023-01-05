@@ -15,7 +15,7 @@
   );
   width: 100%;
   height: 200px;
-  background: brown;
+  background: #79526f;
   color: white;
   border-radius: 25px;
   transition: transform ease 0.4s, box-shadow ease 0.4s;

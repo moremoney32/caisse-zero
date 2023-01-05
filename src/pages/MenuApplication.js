@@ -27,12 +27,16 @@ export function MenuApplication() {
           </div>
           <div className="containmenuPrincipalUser">
             <div className="menuPrincipalUsericon">
-              <img src={achatsventes} alt="" className="Usericonmenu" />
-              <span className="Usericonmenuspan">ACHATS/VENTES</span>
+              <NavLink to="/ACHATS">
+                <img src={achatsventes} alt="" className="Usericonmenu" />
+              </NavLink>
+              <span className="Usericonmenuspan">ACHATS</span>
             </div>
             <div className="menuPrincipalUsericon">
-              <img src={transaction} alt="" className="Usericonmenu" />
-              <span className="Usericonmenuspan">TRANSACT</span>
+              <NavLink to="/TRANSACTIONDIV">
+                <img src={transaction} alt="" className="Usericonmenu" />
+              </NavLink>
+              <span className="Usericonmenuspan">TRANSACT DIV</span>
             </div>
             <div className="menuPrincipalUsericon">
               <NavLink to="/DettesCreances">
@@ -41,7 +45,9 @@ export function MenuApplication() {
               <span className="Usericonmenuspan">DETTES</span>
             </div>
             <div className="menuPrincipalUsericon">
-              <img src={bagmoney} alt="" className="Usericonmenu" />
+              <NavLink to="/TRANSFERTCPT">
+                <img src={bagmoney} alt="" className="Usericonmenu" />
+              </NavLink>
               <span className="Usericonmenuspan">TRANSFERT CPT CPT</span>
             </div>
             <div className="menuPrincipalUsericon">
@@ -49,6 +55,12 @@ export function MenuApplication() {
                 <img src={dettes} alt="" className="Usericonmenu" />
               </NavLink>
               <span className="Usericonmenuspan">REMB.DETTES</span>
+            </div>
+            <div className="menuPrincipalUsericon">
+              <NavLink to="/VENTES">
+                <img src={achatsventes} alt="" className="Usericonmenu" />
+              </NavLink>
+              <span className="Usericonmenuspan">VENTES</span>
             </div>
             <div className="menuPrincipalUsericon">
               <img

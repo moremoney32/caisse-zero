@@ -13,6 +13,10 @@ import { ContactCaisseZero } from "./components/ContactCaisseZero";
 import { Commentaire } from "./components/Commentaires";
 import { Inscription } from "./components/Inscription";
 import { RembDettes } from "./pages/RembDettes";
+import { OperationsDiverses } from "./pages/OperationsDiverses";
+import { Achats } from "./pages/Achats";
+import { Ventes } from "./pages/Ventes";
+import { TransfertCpt } from "./pages/TransfertCpt";
 
 export function App() {
   return (
@@ -27,11 +31,16 @@ export function App() {
           <Route path="/MenuAplication" element={<MenuApplication />} />
           <Route path="/DettesCreances" element={<DettesCreances />} />
           <Route path="/REMBDETTES" element={<RembDettes />} />
+          <Route path="/TRANSACTIONDIV" element={<OperationsDiverses />} />
+          <Route path="/ACHATS" element={<Achats />} />
+          <Route path="/VENTES" element={<Ventes />} />
+          <Route path="/TRANSFERTCPT" element={<TransfertCpt />} />
           <Route
             path="/compteZeroNouveau"
             element={<IdentificationCaisseZero />}
           />
           <Route path="/handleuser" element={<HandleUser />} />
+          <Route path="/handleuserr" element={<HandleUser />} />
           <Route path="/compteZero" element={<CompteZero />} />
           <Route path="/compteZeroExistant" element={<CompteZeroExistant />} />
           <Route path="/controls" element={<ControlsCard />} />

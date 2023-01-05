@@ -19,7 +19,7 @@
 }
 .transactionsnumberspan {
   font-size: 25px;
-  color: aqua;
+  color: black;
 }
 .controldate {
   display: flex;
@@ -31,12 +31,12 @@
 .detailstilte {
   display: flex;
   justify-content: space-between;
-  color: violet;
+  color: red;
   font-size: 25px;
 }
 .table {
   padding: 10px;
-  border: 2px solid violet;
+  border: 2px solid #79526f;
   line-height: 35px;
   border-collapse: collapse;
 }
@@ -48,7 +48,7 @@ td {
   text-align: right !important;
 }
 .tdsecond {
-  background: aqua;
+  background: red;
   color: white;
   text-align: center;
 }
@@ -59,11 +59,11 @@ tr:hover td {
 }
 table {
   padding: 25px;
-  border: 2px solid violet;
+  border: 2px solid #79526f;
 }
 .td1 {
   color: white;
-  background: darkgray;
+  background: #79526f;
 }
 .tdsecondo {
   text-align: center;
@@ -82,10 +82,10 @@ table {
 }
 .controlequilibrecenter {
   font-size: 30px;
-  color: violet;
+  color: black;
 }
 .controlequilibreright {
-  background: violet;
+  background: red;
   color: white;
   padding: 10px;
   padding-left: 15px;
@@ -94,7 +94,7 @@ table {
   font-size: 25px;
 }
 .controlCenterLeft {
-  color: aqua;
+  color: black;
   font-size: 25px;
 }
 .controlCenterRight {
@@ -116,7 +116,7 @@ table {
 }
 .controlRightspanLeft {
   color: white;
-  background: aqua;
+  background: red;
   padding: 10px;
   font-size: 18px;
 }
@@ -146,4 +146,145 @@ table {
   border: none;
   cursor: pointer;
   background: darkgray;
+}
+.blocCash {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.blocCash1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sous-blocCash1 {
+  display: flex;
+  gap: 15px;
+}
+.totalachat {
+  color: red;
+  font-size: 25px;
+}
+.blocCash2 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+  align-items: center;
+}
+
+@media all and (min-width: 320px) and (max-width: 767px) {
+  .dettescreances {
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+  }
+  .newdettescreances {
+    width: 100%;
+    font-size: 25px;
+    margin: auto;
+  }
+  .transactionsnumber {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin: auto;
+    transform: translate3d(0, 50px, 0);
+  }
+  .containcontroldate {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .controldate {
+    font-size: 20px;
+    display: flex;
+    gap: 10px;
+  }
+  .detailstilte {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: auto;
+  }
+  .controlfooter {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .sous-controlRight {
+    font-size: 20px;
+  }
+  .blocCash1 {
+    display: flex;
+    gap: 25px;
+  }
+  .blocCash2 {
+    display: flex;
+    gap: 25px;
+    font-size: 20px;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .dettescreances {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+  }
+  .newdettescreances {
+    width: 100%;
+    font-size: 35px;
+  }
+  .transactionsnumber {
+    display: flex;
+    gap: 25px;
+    transform: translate3d(0, 50px, 0);
+    font-size: 35px;
+  }
+  .transactionsnumberspan {
+    font-size: 40px;
+  }
+  .containcontroldate {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  .transactionsdate {
+    font-size: 40px;
+  }
+  .buttontransactionfacture {
+    font-size: 40px;
+  }
+  .detailstilte {
+    font-size: 35px;
+  }
+  td {
+    font-size: 40px;
+  }
+  .controlfooter {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .sous-controlRight {
+    font-size: 35px;
+  }
+  .blocCash2 {
+    font-size: 35px;
+  }
+
+  .controlequilibrecenter {
+    font-size: 35px;
+  }
+  .controlCenterLeft {
+    font-size: 35px;
+  }
+  .controlRightspan {
+    font-size: 35px;
+  }
+  .controlRightspanLeft {
+    font-size: 35px;
+  }
 }

@@ -9,6 +9,8 @@ import { Footer } from "../components/Footer.js";
 import { EmailButton } from "../components/EmailButton";
 import { NavLink } from "react-router-dom";
 import "../css/home.css";
+import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
+import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 export function HandleUser() {
   return (
     <div className="contenairAcess">
@@ -41,31 +43,35 @@ export function HandleUser() {
                 <th>Budget</th>
                 <th>Rap</th>
               </tr>
-              <tr>
-                <td>DELTA</td>
-                <td className="tdemail">toto@gmail.com</td>
-                <td>Oui/No n</td>
-                <td>Non/Visual/M odif</td>
-                <td>Non/Vi sual/M odif</td>
-                <td>Non/Vi sual/M odif</td>
-                <td>Non/Vi sual/M odif</td>
-                <td>Non/Vi sual/M odif</td>
-                <td>Non/Vi sual/M odif</td>
-                <td>Non/Vi sual/M odif</td>
-              </tr>
-              <tr>
-                <td>DELTA</td>
-                <td className="tdemail">Lambda@gmail.com</td>
-                <td>Oui/No n</td>
-                <td>Non/Vi sual/M odif</td>
-                <td>Non/Vi sual/M odif</td>
-                <td>Non/Vi sual/M odif</td>
-                <td>Non/Vi sual/M odif</td>
-                <td>Non/Vi sual/M odif</td>
-                <td>Non/Vi sual/M odif</td>
-                <td>Non/Vi sual/M odif</td>
-              </tr>
             </thead>
+            <tr>
+              <td data-label="CZ">DELTA</td>
+              <td className="tdemail" data-label="Mail">
+                toto@gmail.com
+              </td>
+              <td data-label="Admin">Oui/No n</td>
+              <td data-label="Compta">Non/Visual/M odif</td>
+              <td data-label="Stock">Non/Vi sual/M odif</td>
+              <td data-label="Com">Non/Vi sual/M odif</td>
+              <td data-label="Paie">Non/Vi sual/M odif</td>
+              <td data-label="Immos">Non/Vi sual/M odif</td>
+              <td data-label="Budget">Non/Vi sual/M odif</td>
+              <td data-label="Rap">Non/Vi sual/M odif</td>
+            </tr>
+            <tr>
+              <td data-label="CZ">DELTA</td>
+              <td className="tdemail" data-label="Mail">
+                Lambda@gmail.com
+              </td>
+              <td data-label="Admin">Oui/No n</td>
+              <td data-label="Compta">Non/Visual/M odif</td>
+              <td data-label="Stock">Non/Vi sual/M odif</td>
+              <td data-label="Com">Non/Vi sual/M odif</td>
+              <td data-label="Paie">Non/Vi sual/M odif</td>
+              <td data-label="Immos">Non/Vi sual/M odif</td>
+              <td data-label="Budget">Non/Vi sual/M odif</td>
+              <td data-label="Rap">Non/Vi sual/M odif</td>
+            </tr>
           </table>
           <NavLink to="/MenuAplication" className="buttontable">
             suivant

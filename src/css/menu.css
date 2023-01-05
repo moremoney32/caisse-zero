@@ -15,7 +15,6 @@ h4 {
 .containmenuPrincipalUser {
   width: 500px;
   padding: 50px;
-  /* background: red; */
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
@@ -30,7 +29,7 @@ h4 {
 .Usericonmenu {
   width: 35px !important;
   height: 35px !important;
-  background: blue;
+  background: #f7bf52;
   border-radius: 50%;
   padding: 15px;
   cursor: pointer;
@@ -39,7 +38,7 @@ h4 {
 .Usericonmenugestion {
   width: 35px !important;
   height: 35px !important;
-  background: blueviolet;
+  background: #79526f;
   border-radius: 50%;
   padding: 15px;
   cursor: pointer;
@@ -57,7 +56,6 @@ h4 {
 .Usericonmenutabord {
   width: 35px !important;
   height: 35px !important;
-  background: green;
   border-radius: 50%;
   padding: 15px;
   cursor: pointer;
@@ -68,4 +66,39 @@ h4 {
 }
 .Usericonmenuspangestion {
   color: black;
+}
+
+@media all and (min-width: 320px) and (max-width: 767px) {
+  .sous-menuPrincipalUser {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: auto;
+  }
+  .containmenuPrincipalUser {
+    width: 320px;
+    display: flex;
+    padding: 10px;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: auto;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .sous-menuPrincipalUser {
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+  }
+  h4 {
+    font-size: 35px;
+  }
+  .containmenuPrincipalUser {
+    padding: 10px;
+    display: flex;
+    gap: 100px;
+    flex-wrap: wrap;
+    margin: auto;
+    font-size: 25px;
+  }
 }

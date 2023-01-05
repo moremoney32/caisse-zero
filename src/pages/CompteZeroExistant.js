@@ -8,6 +8,7 @@ import "../css/compteZeroExistant.css";
 import flecheMain from "../images/flecheMain.svg";
 import { NavBar } from "../components/NavBar.js";
 import { Footer } from "../components/Footer.js";
+import { NavLink } from "react-router-dom";
 export function CompteZeroExistant() {
   return (
     <div className="contenairAcess">
@@ -34,7 +35,9 @@ export function CompteZeroExistant() {
               </div>
             </div>
           </div>
-          <button className="buttoncompteZeroExistant">Accedez</button>
+          <NavLink to="/handleuserr">
+            <button className="buttoncompteZeroExistant">Accedez</button>
+          </NavLink>
           <button className="buttoncompteZeroExistant">
             Ajouter un autre utilisateur
           </button>

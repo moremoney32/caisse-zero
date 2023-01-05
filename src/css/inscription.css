@@ -4,7 +4,6 @@
   transform: translate3d(0, 300px, 0);
   padding-top: 100px;
   padding-bottom: 100px;
-  /* background: red; */
 }
 
 .inscription {
@@ -14,13 +13,13 @@
 .buttonInscriptionLeft {
   font-size: 20px;
   font-weight: bold;
-  color: blue;
+  color: white;
   padding: 11px;
   padding-left: 30px;
   width: 250px;
   height: 50px;
   border: none;
-  background-color: darkgray;
+  background-color: #79526f;
   border-radius: 10px;
   cursor: pointer;
   line-height: 50px;
@@ -33,12 +32,12 @@
   font-size: 20px;
   padding-left: 100px !important;
   font-weight: bold;
-  color: blue;
+  color: white;
   padding: 11px;
   width: 250px;
   height: 50px;
   border: none;
-  background-color: darkgray;
+  background-color: #79526f;
   border-radius: 10px;
   cursor: pointer;
   line-height: 50px;
@@ -84,13 +83,13 @@
   .buttonInscriptionLeft {
     font-size: 24px;
     font-weight: bold;
-    color: blue;
+    color: white;
     padding: 11px;
     padding-left: 35px;
     width: 270px;
     height: 70px;
     border: none;
-    background-color: darkgray;
+    background-color: #79526f;
     border-radius: 10px;
     cursor: pointer;
     line-height: 50px;
@@ -103,12 +102,12 @@
     font-size: 25px;
     padding-left: 100px !important;
     font-weight: bold;
-    color: blue;
+    color: white;
     padding: 11px;
     width: 270px;
     height: 70px;
     border: none;
-    background-color: darkgray;
+    background-color: #79526f;
     border-radius: 10px;
     cursor: pointer;
     line-height: 50px;

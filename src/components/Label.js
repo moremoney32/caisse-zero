@@ -9,10 +9,15 @@ import { useState } from "react";
 export function Label({ email, mdp, close }) {
   function closeModal() {
     let connect = document.querySelector(".connexionnRight");
-
+    let comment = document.querySelector(".sous-controlsCommentaire");
+    let footer = document.querySelector(".Footer");
+    let bouttonLeft = document.querySelector(".buttonInscriptionLeft");
     let bouttonRight = document.querySelector(".buttonInscriptionRight");
     bouttonRight.style.display = "block";
+    bouttonLeft.style.display = "block";
     connect.style.display = "none";
+    comment.style.opacity = 1;
+    footer.style.display = "block";
   }
   const navigate = useNavigate();
 

@@ -18,10 +18,10 @@ export function Formulaire({ email, mdp, confirmMdp, enter, close }) {
 
     let bouttonLeft = document.querySelector(".buttonInscriptionLeft");
     bouttonLeft.style.display = "block";
+    bouttonRight.style.display = "block";
     connect.style.display = "none";
     comment.style.opacity = 1;
     footer.style.display = "block";
-    bouttonRight.style.display = "block";
   }
   const initValues = { email: "", password: "", confirmpassword: "" };
   const [formValues, setFormValues] = useState(initValues);

@@ -13,12 +13,11 @@ export function Inscription() {
     let bouttonLeft = document.querySelector(".buttonInscriptionLeft");
     let footer = document.querySelector(".Footer");
     let bouttonRight = document.querySelector(".buttonInscriptionRight");
-    comment.style.opacity = 0.1;
-    footer.style.display = "none";
     bouttonRight.style.display = "none";
     bouttonLeft.style.display = "none";
     connect.style.display = "block";
-    connect.style.zIndex = 10000;
+    comment.style.opacity = 0.1;
+    footer.style.display = "none";
   }
 
   const button = {
@@ -43,7 +42,6 @@ export function Inscription() {
     let bouttonLeft = document.querySelector(".buttonInscriptionLeft");
     let footer = document.querySelector(".Footer");
     let connect = document.querySelector(".connexionnRight");
-
     let bouttonRight = document.querySelector(".buttonInscriptionRight");
     bouttonRight.style.display = "none";
     bouttonLeft.style.display = "none";

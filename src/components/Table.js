@@ -1,5 +1,5 @@
 /***
- * composant qui gere les tableaux
+ * composant qui gere les tableaux de caisse zero
  */
 import "../css/dettesCreances.css";
 export function Table({ td1, td2, td3, td4, td5, td6, td7, td8, td9 }) {

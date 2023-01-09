@@ -55,7 +55,7 @@ export function Inscription() {
       <div className="inscription">
         <div className="inscriptionLeft">
           <span className="buttonInscriptionLeft" onClick={formulaire}>
-            Accédez à CAISSE ZERO
+            Inscrivez-vous
           </span>
         </div>
         <div className="inscriptionRight">
@@ -64,7 +64,7 @@ export function Inscription() {
             className="buttonInscriptionRight"
             onClick={formulaireLabel}
           >
-            Identifiez-vous…
+             Accédez à votre compte
           </span>
         </div>
       </div>

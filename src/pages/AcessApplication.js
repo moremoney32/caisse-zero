@@ -37,7 +37,6 @@ export function AcessApplication() {
         <ControlsCard />
         <ContactCaisseZero />
         <Commentaire />
-        <Inscription />
         <Footer />
       </div>
     </div>

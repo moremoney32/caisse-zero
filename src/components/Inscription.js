@@ -43,11 +43,14 @@ export function Inscription() {
     let footer = document.querySelector(".Footer");
     let connect = document.querySelector(".connexionnRight");
     let bouttonRight = document.querySelector(".buttonInscriptionRight");
+    let imagelogo = document.querySelector(".imagelogocaissezeroo");
+    console.log(imagelogo);
     bouttonRight.style.display = "none";
     bouttonLeft.style.display = "none";
     connect.style.display = "block";
     comment.style.opacity = 0.1;
-    footer.style.display = "none";
+    imagelogo.style.display = "none";
+    // footer.style.display = "none";
   }
 
   return (
@@ -64,7 +67,7 @@ export function Inscription() {
             className="buttonInscriptionRight"
             onClick={formulaireLabel}
           >
-             Accédez à votre compte
+            Accédez à votre compte
           </span>
         </div>
       </div>

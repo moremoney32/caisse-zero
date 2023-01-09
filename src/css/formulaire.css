@@ -1,13 +1,13 @@
 .connexionn {
   border-radius: 5px;
-  background-color:orange;
+  background-color: black;
   width: 20%;
   position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  height: 410px;
+  height: 430px;
   position: fixed;
   top: 15%;
   left: 20%;
@@ -17,7 +17,7 @@
 
 .connexionnRight {
   border-radius: 5px;
-  background-color:orange;
+  background-color: black;
   width: 20%;
   position: absolute;
   display: flex;
@@ -27,14 +27,14 @@
   height: 340px;
   position: fixed;
   top: 20%;
-  right:15%;
+  right: 15%;
   display: none;
   padding-bottom: 100px;
 }
 .forgetmdp {
   padding-top: 30px;
   text-decoration: none;
-  color:black;
+  color: black;
 }
 .close {
   position: absolute;
@@ -47,17 +47,42 @@
   gap: 15px;
 }
 form label {
-  color:white;
+  color: white;
   font-size: 20px;
   font-weight: 100;
 }
 form input {
-  width: 100%;
-  height: 40px;
-  border: none;
-  border-radius: 5px;
+  border: 0.8px solid #ccc;
   outline: none;
+  padding: 8px;
+}
+.keyemail {
+  margin: 0;
+  padding: 8px;
+  width: 100%;
+  border-radius: 8px;
   font-size: 20px;
+  height: 30px;
+}
+.password {
+  margin: 0;
+  padding: 8px;
+  width: 90%;
+  border-radius: 8px;
+  font-size: 20px;
+  height: 30px;
+}
+.btn-submit {
+  outline: none;
+  text-transform: capitalize;
+  font-size: 1.3rem;
+  padding: 15px 23px;
+  margin: 0;
+  border-radius: 15px;
+  cursor: pointer;
+  margin: auto;
+  color: orange;
+  /* font-size: 16px; */
 }
 form {
   display: flex;
@@ -66,7 +91,7 @@ form {
   align-items: flex-start;
 }
 .formErrors {
-  color:black;
+  color: black;
   opacity: 0.7;
 }
 .envoiFormulaire {
@@ -77,13 +102,16 @@ form {
   padding: 11px;
   height: 40px;
   border: none;
-  background-color:blueviolet;
+  background-color: blueviolet;
   border-radius: 10px;
   cursor: pointer;
   display: flex;
   margin: auto;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+}
+small {
+  color: orange;
 }
 @media all and (min-width: 320px) and (max-width: 767px) {
   form {
@@ -158,6 +186,7 @@ form {
   }
   small {
     font-size: 22px;
+    /* color: orange; */
   }
   .connexionn {
     border-radius: 5px;

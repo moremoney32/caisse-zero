@@ -73,7 +73,7 @@
   height: 40px;
   padding-bottom: 40px !important;
   border: none;
-  background-color: blue;
+  background-color: orange;
   border-radius: 10px;
   cursor: pointer;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
@@ -100,14 +100,14 @@ th {
 }
 .buttontable {
   position: absolute;
-  background-color: brown;
+  background-color: orange;
   height: 40px;
   line-height: 40px;
   width: 10%;
   border-radius: 20px;
   font-size: 25px;
   color: #ffffff;
-  bottom: -150px;
+  top: 170px;
   right: 20px;
   border: none;
   cursor: pointer;

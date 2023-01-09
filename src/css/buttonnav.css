@@ -1,4 +1,4 @@
-.Footernav{
+/* .Footernav{
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -6,24 +6,24 @@
     height: 150px;
     padding: 50px;
     transform: translate3d(0,50px,0);
+} */
+.footernav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.footernav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.navfooter {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  color: white;
 }
-.navfooter{
-    display: flex;
-    gap: 7px;
-    align-items: center;
-    color: white;
+.footerpnav {
+  color: white;
+  font-size: 25px;
+  margin: auto;
 }
-.footerpnav{
-    color: white;
-    font-size: 25px;
-    margin: auto;
-}
-.navlink{
-    color: white;
-    font-size: 25px;
+.navlink {
+  color: white;
+  font-size: 25px;
 }

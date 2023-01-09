@@ -13,15 +13,15 @@ export function Formulaire({ email, mdp, confirmMdp, enter, close }) {
   function closeModal() {
     let comment = document.querySelector(".sous-controlsCommentaire");
     let connect = document.querySelector(".connexionn");
-    let footer = document.querySelector(".Footer");
     let bouttonRight = document.querySelector(".buttonInscriptionRight");
+    let imagelogo = document.querySelector(".imagelogocaissezero");
 
     let bouttonLeft = document.querySelector(".buttonInscriptionLeft");
     bouttonLeft.style.display = "block";
     bouttonRight.style.display = "block";
     connect.style.display = "none";
     comment.style.opacity = 1;
-    footer.style.display = "block";
+    imagelogo.style.opacity = 1;
   }
   const initValues = { email: "", password: "", confirmpassword: "" };
   const [formValues, setFormValues] = useState(initValues);
@@ -100,7 +100,7 @@ export function Formulaire({ email, mdp, confirmMdp, enter, close }) {
             type="password"
             name="confirmpassword"
             id="confirmkeyPassword"
-            className="confirmpassword"
+            className="keyemail"
             value={formValues.confirmpassword}
             onChange={handleChanges}
           />
@@ -109,7 +109,11 @@ export function Formulaire({ email, mdp, confirmMdp, enter, close }) {
         {Object.keys(formErrors).length === 0 && isSubmit ? (
           navigate("/compteZeroNouveau")
         ) : (
-          <button className="envoiFormulaire">Compte Utilisateur</button>
+          <input
+            type="submit"
+            className="btn-submit"
+            value="Compte Utilisateur"
+          />
         )}
       </form>
     </div>

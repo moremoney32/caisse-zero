@@ -1,6 +1,6 @@
 .compteZeroExistant {
   position: relative;
-  transform: translate3d(0, 150px, 0);
+  transform: translate3d(0, 80px, 0);
   text-align: center;
   display: flex;
   flex-direction: column;

@@ -4,7 +4,7 @@
 import { NavLink } from "react-router-dom";
 import "../css/formulaire.css";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function Label({ email, mdp, close }) {
   function closeModal() {
@@ -63,6 +63,7 @@ export function Label({ email, mdp, close }) {
             type="text"
             name="email"
             id="email"
+            placeholder="remplir l'email"
             className="keyemail"
             value={formValues.email}
             onChange={handleChanges}
@@ -76,6 +77,7 @@ export function Label({ email, mdp, close }) {
             name="password"
             id="keyPassword"
             className="password"
+            placeholder="remplir le mot de passe"
             value={formValues.password}
             onChange={handleChanges}
           />
@@ -88,7 +90,7 @@ export function Label({ email, mdp, close }) {
         {Object.keys(formErrors).length === 0 && isSubmit ? (
           navigate("/compteZeroNouveau")
         ) : (
-          <button className="envoiFormulaire">Entrez</button>
+          <input className="btn-submit" type="submit" value="Entrez" />
         )}
 
         <NavLink to="/" className="forgetmdp">

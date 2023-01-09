@@ -101,6 +101,5 @@ export function HandleUser() {
       </div>
       <Footer Footernav={footernav} />
     </div>
-    //</div>
   );
 }

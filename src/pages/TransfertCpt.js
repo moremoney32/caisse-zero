@@ -1,7 +1,6 @@
 /****
  * pages qui gere le transfert des cpt
  */
-import { NavBar } from "../components/NavBar.js";
 import { Footer } from "../components/Footer.js";
 import { HeaderTransactions } from "../components/HeaderTransactions";
 import { DetailsCreances } from "../components/DetailsCreances.js";

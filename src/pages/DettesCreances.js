@@ -2,7 +2,6 @@
  * page qui traite les dettes et les creances
  */
 import "../css/dettesCreances.css";
-import { NavBar } from "../components/NavBar.js";
 import { Footer } from "../components/Footer.js";
 import { HeaderTransactions } from "../components/HeaderTransactions";
 import { Table } from "../components/Table.js";

@@ -1,7 +1,6 @@
 /***
  * page qui gere le menu de l application
  */
-import { NavBar } from "../components/NavBar.js";
 import { Footer } from "../components/Footer.js";
 import { EmailButton } from "../components/EmailButton";
 import "../css/handleuser.css";

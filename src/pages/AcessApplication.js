@@ -9,7 +9,6 @@ import { Information } from "../components/Information.js";
 import { ControlsCard } from "../components/ControlsCards.js";
 import { ContactCaisseZero } from "../components/ContactCaisseZero.js";
 import { Commentaire } from "../components/Commentaires.js";
-import { Inscription } from "../components/Inscription.js";
 import { Footer } from "../components/Footer.js";
 
 export function AcessApplication() {

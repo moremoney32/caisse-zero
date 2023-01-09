@@ -59,7 +59,7 @@ form input {
 .keyemail {
   margin: 0;
   padding: 8px;
-  width: 100%;
+  width: 260px;
   border-radius: 8px;
   font-size: 20px;
   height: 30px;
@@ -67,7 +67,7 @@ form input {
 .password {
   margin: 0;
   padding: 8px;
-  width: 90%;
+  width: 260px;
   border-radius: 8px;
   font-size: 20px;
   height: 30px;
@@ -82,7 +82,6 @@ form input {
   cursor: pointer;
   margin: auto;
   color: orange;
-  /* font-size: 16px; */
 }
 form {
   display: flex;

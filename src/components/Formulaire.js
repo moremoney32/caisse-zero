@@ -10,31 +10,29 @@ import { useNavigate } from "react-router-dom";
 export function Formulaire({ email, mdp, confirmMdp, enter, close }) {
   const navigate = useNavigate();
 
-  function closeModal() {
-    let comment = document.querySelector(".sous-controlsCommentaire");
+  function closeModale() {
     let connect = document.querySelector(".connexionn");
-    let bouttonRight = document.querySelector(".buttonInscriptionRight");
-    let imagelogo = document.querySelector(".imagelogocaissezero");
-
     let bouttonLeft = document.querySelector(".buttonInscriptionLeft");
-    bouttonLeft.style.display = "block";
+    let newlogo = document.querySelector(".newlogocaissezero");
+    let imagelogo = document.querySelector(".imagelogocaissezeroo");
+    let bouttonRight = document.querySelector(".buttonInscriptionRight");
     bouttonRight.style.display = "block";
+    bouttonLeft.style.display = "block";
     connect.style.display = "none";
-    comment.style.opacity = 1;
     imagelogo.style.opacity = 1;
+    newlogo.style.opacity = 1;
   }
   const initValues = { email: "", password: "", confirmpassword: "" };
   const [formValues, setFormValues] = useState(initValues);
   const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
   const handleChanges = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
   const handSubmit = (e) => {
     e.preventDefault();
+    console.log(formValues);
     setFormErrors(validateForms(formValues));
-    setIsSubmit(true);
   };
 
   const validateForms = (values) => {
@@ -58,20 +56,54 @@ export function Formulaire({ email, mdp, confirmMdp, enter, close }) {
     } else if (values.password !== values.confirmpassword) {
       errors.confirmpassword = "veuillez reecrire le meme mot de passe";
     }
+    if (
+      !values.email === false &&
+      !rejectEmail.test(values.email) === false &&
+      !values.password === false &&
+      !passworD.test(values.password) === false &&
+      !values.confirmpassword === false &&
+      values.password === values.confirmpassword
+    ) {
+      const recuperationFormulaire = {
+        email: values.email,
+        password: values.password,
+        confirmpassword: values.confirmpassword,
+      };
+      console.log(recuperationFormulaire);
+      console.log(JSON.stringify(recuperationFormulaire));
+      fetch("https://caisse0.ubix-group.com/public/index.php/api/register", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
 
-    return errors;
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(recuperationFormulaire),
+      })
+        .then((response) => {
+          return response.json();
+        })
+
+        .then((result) => {
+          return console.log(result), result;
+        });
+      return navigate("/compteZeroNouveau");
+    } else {
+      return errors;
+    }
   };
 
   return (
     <div className="connexionn">
-      <img src={close} alt="" className="close" onClick={closeModal} />
+      <img src={close} alt="" className="close" onClick={closeModale} />
       <form className="space" onSubmit={handSubmit}>
         <div className="space">
-          <label for="email">{email}</label>
+          <label htmlFor="email">{email}</label>
           <input
             type="text"
             name="email"
             id="email"
+            placeholder="remplir l'email"
             className="keyemail"
             value={formValues.email}
             onChange={handleChanges}
@@ -79,11 +111,12 @@ export function Formulaire({ email, mdp, confirmMdp, enter, close }) {
         </div>
         <span className="formErrors">{formErrors.email}</span>
         <div className="space">
-          <label for="keyPassword">{mdp}</label>
+          <label htmlFor="keyPassword">{mdp}</label>
           <input
-            type="password"
+            type="text"
             name="password"
             id="keyPassword"
+            placeholder="remplir le mot de passe"
             className="password"
             value={formValues.password}
             onChange={handleChanges}
@@ -95,26 +128,24 @@ export function Formulaire({ email, mdp, confirmMdp, enter, close }) {
         </div>
         <span className="formErrors">{formErrors.password}</span>
         <div className="space">
-          <label for="confirmkeyPassword">{confirmMdp}</label>
+          <label htmlFor="confirmkeyPassword">{confirmMdp}</label>
           <input
-            type="password"
+            type="text"
             name="confirmpassword"
             id="confirmkeyPassword"
+            placeholder="confirmation du mot de passe"
             className="keyemail"
             value={formValues.confirmpassword}
             onChange={handleChanges}
           />
         </div>
         <span className="formErrors">{formErrors.confirmpassword}</span>
-        {Object.keys(formErrors).length === 0 && isSubmit ? (
-          navigate("/compteZeroNouveau")
-        ) : (
-          <input
-            type="submit"
-            className="btn-submit"
-            value="Compte Utilisateur"
-          />
-        )}
+
+        <input
+          type="submit"
+          className="btn-submit"
+          value="Compte Utilisateur"
+        />
       </form>
     </div>
   );

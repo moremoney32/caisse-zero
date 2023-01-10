@@ -8,16 +8,16 @@ import { Label } from "./Label.js";
 import close from "../images/close.svg";
 export function Inscription() {
   function formulaire() {
-    let comment = document.querySelector(".sous-controlsCommentaire");
     let connect = document.querySelector(".connexionn");
     let bouttonLeft = document.querySelector(".buttonInscriptionLeft");
-    let footer = document.querySelector(".Footer");
+    let newlogo = document.querySelector(".newlogocaissezero");
+    let imagelogo = document.querySelector(".imagelogocaissezeroo");
     let bouttonRight = document.querySelector(".buttonInscriptionRight");
     bouttonRight.style.display = "none";
     bouttonLeft.style.display = "none";
     connect.style.display = "block";
-    comment.style.opacity = 0.1;
-    footer.style.display = "none";
+    imagelogo.style.opacity = 0.3;
+    newlogo.style.opacity = 0.3;
   }
 
   const button = {
@@ -38,19 +38,16 @@ export function Inscription() {
     fontFamily: "Trebuchet MS Lucida Sans Unicode Lucida Grande",
   };
   function formulaireLabel() {
-    let comment = document.querySelector(".sous-controlsCommentaire");
     let bouttonLeft = document.querySelector(".buttonInscriptionLeft");
-    let footer = document.querySelector(".Footer");
     let connect = document.querySelector(".connexionnRight");
     let bouttonRight = document.querySelector(".buttonInscriptionRight");
+    let newlogo = document.querySelector(".newlogocaissezero");
     let imagelogo = document.querySelector(".imagelogocaissezeroo");
-    console.log(imagelogo);
     bouttonRight.style.display = "none";
     bouttonLeft.style.display = "none";
     connect.style.display = "block";
-    comment.style.opacity = 0.1;
-    imagelogo.style.display = "none";
-    // footer.style.display = "none";
+    imagelogo.style.opacity = 0.3;
+    newlogo.style.opacity = 0.3;
   }
 
   return (

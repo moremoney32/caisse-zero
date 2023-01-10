@@ -4,36 +4,38 @@
 import { NavLink } from "react-router-dom";
 import "../css/formulaire.css";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import axios from "axios";
+import { useState } from "react";
 
 export function Label({ email, mdp, close }) {
   function closeModal() {
-    let connect = document.querySelector(".connexionnRight");
-    let comment = document.querySelector(".sous-controlsCommentaire");
-    let footer = document.querySelector(".Footer");
     let bouttonLeft = document.querySelector(".buttonInscriptionLeft");
+    let connect = document.querySelector(".connexionnRight");
     let bouttonRight = document.querySelector(".buttonInscriptionRight");
+    let newlogo = document.querySelector(".newlogocaissezero");
+    let imagelogo = document.querySelector(".imagelogocaissezeroo");
     bouttonRight.style.display = "block";
     bouttonLeft.style.display = "block";
     connect.style.display = "none";
-    comment.style.opacity = 1;
-    footer.style.display = "block";
+    imagelogo.style.opacity = 1;
+    newlogo.style.opacity = 1;
   }
   const navigate = useNavigate();
-
   const initValues = { email: "", password: "" };
+
   const [formValues, setFormValues] = useState(initValues);
   const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
   const handleChanges = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
+
   const handSubmit = (e) => {
     e.preventDefault();
+    console.log(formValues);
     setFormErrors(validateForms(formValues));
-    setIsSubmit(true);
   };
+
   const validateForms = (values) => {
     const errors = {};
 
@@ -50,15 +52,48 @@ export function Label({ email, mdp, close }) {
     } else if (!passworD.test(values.password)) {
       errors.password = "mauvais format de mot de passe";
     }
+    if (
+      !values.email === false &&
+      !rejectEmail.test(values.email) === false &&
+      !values.password === false &&
+      !passworD.test(values.password) === false
+    ) {
+      const recuperationFormulaire = {
+        email: values.email,
+        password: values.password,
+      };
 
-    return errors;
+      axios
+        .post("https://caisse0.ubix-group.com/public/index.php/api/login", {
+          email: values.email,
+          password: values.password,
+        })
+        .then(function (response) {
+          if (response.data.status_code === 200) {
+            window.localStorage.setItem(
+              "user",
+              JSON.stringify({
+                id: response.data.utilisateur,
+                token: response.data.token,
+              })
+            );
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      return navigate("/compteZeroNouveau");
+    } else {
+      return errors;
+    }
   };
+
   return (
     <div className="connexionnRight">
       <img src={close} alt="" className="close" onClick={closeModal} />
-      <form className="space" onSubmit={handSubmit}>
+      <form method="post" className="space" onSubmit={handSubmit}>
         <div className="space">
-          <label>{email}</label>
+          <label htmlFor="email">{email}</label>
           <input
             type="text"
             name="email"
@@ -71,7 +106,7 @@ export function Label({ email, mdp, close }) {
         </div>
         <span className="formErrors">{formErrors.email}</span>
         <div className="space">
-          <label>{mdp}</label>
+          <label htmlFor="keyPassword">{mdp}</label>
           <input
             type="text"
             name="password"
@@ -87,11 +122,8 @@ export function Label({ email, mdp, close }) {
           </small>
         </div>
         <span className="formErrors">{formErrors.password}</span>
-        {Object.keys(formErrors).length === 0 && isSubmit ? (
-          navigate("/compteZeroNouveau")
-        ) : (
-          <input className="btn-submit" type="submit" value="Entrez" />
-        )}
+
+        <input className="btn-submit" type="submit" value="Entrez" />
 
         <NavLink to="/" className="forgetmdp">
           Mot de Passe Oublié?

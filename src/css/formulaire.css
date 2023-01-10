@@ -34,7 +34,7 @@
 .forgetmdp {
   padding-top: 30px;
   text-decoration: none;
-  color: black;
+  color: orange;
 }
 .close {
   position: absolute;
@@ -90,7 +90,7 @@ form {
   align-items: flex-start;
 }
 .formErrors {
-  color: black;
+  color: orange;
   opacity: 0.7;
 }
 .envoiFormulaire {

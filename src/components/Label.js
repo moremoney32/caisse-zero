@@ -32,14 +32,15 @@ export function Label({ email, mdp, close }) {
 
   const handSubmit = (e) => {
     e.preventDefault();
-    console.log(formValues);
     setFormErrors(validateForms(formValues));
+    console.log(formValues.email);
   };
 
   const validateForms = (values) => {
     const errors = {};
 
     let passworD = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,36}$/;
+    let p = document.querySelector(".password");
     let rejectEmail =
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!values.email) {
@@ -58,11 +59,6 @@ export function Label({ email, mdp, close }) {
       !values.password === false &&
       !passworD.test(values.password) === false
     ) {
-      const recuperationFormulaire = {
-        email: values.email,
-        password: values.password,
-      };
-
       axios
         .post("https://caisse0.ubix-group.com/public/index.php/api/login", {
           email: values.email,
@@ -108,7 +104,7 @@ export function Label({ email, mdp, close }) {
         <div className="space">
           <label htmlFor="keyPassword">{mdp}</label>
           <input
-            type="text"
+            type="password"
             name="password"
             id="keyPassword"
             className="password"

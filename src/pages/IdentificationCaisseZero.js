@@ -53,7 +53,6 @@ export function IdentificationCaisseZero() {
     borderRadius: "10px",
     cursor: "pointer",
     lineHeight: "30px",
-
     fontFamily:
       "Trebuchet MS Lucida Sans Unicode Lucida Grande Lucida Sans Arial sans-serif",
   };
@@ -66,7 +65,6 @@ export function IdentificationCaisseZero() {
     fontSize: "20px",
     fontWeight: "bold",
     color: "white",
-
     padding: "11px",
     width: "250px",
     height: "70px",
@@ -76,7 +74,6 @@ export function IdentificationCaisseZero() {
     borderRadius: "10px",
     cursor: "pointer",
     lineHeight: "30px",
-
     fontFamily:
       "Trebuchet MS Lucida Sans Unicode Lucida Grande Lucida Sans Arial sans-serif",
   };

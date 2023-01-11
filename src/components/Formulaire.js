@@ -31,7 +31,6 @@ export function Formulaire({ email, mdp, confirmMdp, enter, close }) {
   };
   const handSubmit = (e) => {
     e.preventDefault();
-    console.log(formValues);
     setFormErrors(validateForms(formValues));
   };
 
@@ -69,8 +68,6 @@ export function Formulaire({ email, mdp, confirmMdp, enter, close }) {
         password: values.password,
         confirmpassword: values.confirmpassword,
       };
-      console.log(recuperationFormulaire);
-      console.log(JSON.stringify(recuperationFormulaire));
       fetch("https://caisse0.ubix-group.com/public/index.php/api/register", {
         method: "POST",
         headers: {

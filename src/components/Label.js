@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import "../css/formulaire.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function Label({ email, mdp, close }) {
   function closeModal() {
@@ -33,7 +33,6 @@ export function Label({ email, mdp, close }) {
   const handSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validateForms(formValues));
-    console.log(formValues.email);
   };
 
   const validateForms = (values) => {

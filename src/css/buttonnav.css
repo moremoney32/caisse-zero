@@ -27,3 +27,16 @@
   color: white;
   font-size: 25px;
 }
+@media all and (min-width: 320px) and (max-width: 767px) {
+  .Footernav {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    height: 300px !important;
+  }
+  .footernav {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}

@@ -88,7 +88,7 @@ export function Formulaire({ email, mdp, confirmMdp, enter, close }) {
         .catch((error) => {
           return console.log(error);
         });
-      return navigate("/comfirmationEmail");
+      return navigate("/compteZeroNouveau");
     } else {
       return errors;
     }

@@ -114,7 +114,7 @@ export function Formulaire({ email, mdp, confirmMdp, enter, close }) {
         <div className="space">
           <label htmlFor="keyPassword">{mdp}</label>
           <input
-            type="text"
+            type="password"
             name="password"
             id="keyPassword"
             placeholder="remplir le mot de passe"
@@ -131,7 +131,7 @@ export function Formulaire({ email, mdp, confirmMdp, enter, close }) {
         <div className="space">
           <label htmlFor="confirmkeyPassword">{confirmMdp}</label>
           <input
-            type="text"
+            type="password"
             name="confirmpassword"
             id="confirmkeyPassword"
             placeholder="confirmation du mot de passe"

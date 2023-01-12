@@ -36,6 +36,7 @@ export function Formulaire({ email, mdp, confirmMdp, enter, close }) {
 
   const validateForms = (values) => {
     const errors = {};
+    const emailexist = document.querySelector(".formErrors");
 
     let passworD = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,36}$/;
     let rejectEmail =
@@ -82,9 +83,12 @@ export function Formulaire({ email, mdp, confirmMdp, enter, close }) {
         })
 
         .then((result) => {
-          return console.log(result), result;
+          return result;
+        })
+        .catch((error) => {
+          return console.log(error);
         });
-      return navigate("/compteZeroNouveau");
+      return navigate("/comfirmationEmail");
     } else {
       return errors;
     }
@@ -110,7 +114,7 @@ export function Formulaire({ email, mdp, confirmMdp, enter, close }) {
         <div className="space">
           <label htmlFor="keyPassword">{mdp}</label>
           <input
-            type="password"
+            type="text"
             name="password"
             id="keyPassword"
             placeholder="remplir le mot de passe"
@@ -127,7 +131,7 @@ export function Formulaire({ email, mdp, confirmMdp, enter, close }) {
         <div className="space">
           <label htmlFor="confirmkeyPassword">{confirmMdp}</label>
           <input
-            type="password"
+            type="text"
             name="confirmpassword"
             id="confirmkeyPassword"
             placeholder="confirmation du mot de passe"

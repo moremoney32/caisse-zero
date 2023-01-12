@@ -1,10 +1,15 @@
 import "../css/inscription.css";
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export function ButtonNavigation({
   buttonInscriptionleft,
   buttonInscriptionright,
 }) {
+  // const navigate = useNavigate();
+  // const recuperationUser = JSON.parse(localStorage.getItem("user"));
+  // console.log(recuperationUser.token);
+
   return (
     <div className="inscriptionbutton">
       <div className="inscriptionLeftbutton">
@@ -24,3 +29,4 @@ export function ButtonNavigation({
     </div>
   );
 }
+//onClick={localisation}

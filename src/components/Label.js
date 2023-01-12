@@ -8,6 +8,15 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 export function Label({ email, mdp, close }) {
+  const navigate = useNavigate();
+  // const recuperationUser = JSON.parse(localStorage.getItem("user"));
+  // console.log(recuperationUser.token);
+  //  useEffect(() => {
+  //    if (recuperationUser.token) {
+  //       return navigate("/");
+
+  //    }
+  // });
   function closeModal() {
     let bouttonLeft = document.querySelector(".buttonInscriptionLeft");
     let connect = document.querySelector(".connexionnRight");
@@ -20,7 +29,6 @@ export function Label({ email, mdp, close }) {
     imagelogo.style.opacity = 1;
     newlogo.style.opacity = 1;
   }
-  const navigate = useNavigate();
   const initValues = { email: "", password: "" };
 
   const [formValues, setFormValues] = useState(initValues);
@@ -64,6 +72,7 @@ export function Label({ email, mdp, close }) {
           password: values.password,
         })
         .then(function (response) {
+          console.log(response);
           if (response.data.status_code === 200) {
             window.localStorage.setItem(
               "user",

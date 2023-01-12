@@ -3,11 +3,11 @@
  */
 import "../css/inscription.css";
 import { NavLink } from "react-router-dom";
-export function Button({ enter }) {
+export function Button({ buttoninput, enter }) {
   return (
-    <div className="envoiFormulaire">
-      <NavLink to="/compteZeroNouveau" className="envoiFormulaireLeft">
-        {enter}
+    <div>
+      <NavLink to="/compteZeroNouveau">
+        <button style={buttoninput}>{enter}</button>
       </NavLink>
     </div>
   );

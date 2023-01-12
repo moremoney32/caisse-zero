@@ -49,7 +49,7 @@ export function CompteZero() {
         <img src={file} alt="" className="file" />
         <div className="nameOfstructure">
           <span>Nom de l’entreprise</span>
-          <input className="nameOfstructurebutton" />
+          <input className="password" />
         </div>
         <div className="containDateLine">
           <span className="dateLine">Date limite utilisation 31/12/2022</span>
@@ -60,5 +60,5 @@ export function CompteZero() {
       </div>
       <Footer Footernav={footernav} />
     </div>
-  );
+  ); //nameOfstructurebutton
 }

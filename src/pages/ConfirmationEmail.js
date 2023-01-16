@@ -3,8 +3,14 @@
  */
 import { ImgLogos } from "../components/ImgLogos.js";
 import { Footer } from "../components/Footer.js";
+import { NavLink } from "react-router-dom";
 import { Button } from "../components/Button.js";
 import "../css/confirmationemail.css";
+import "../css/inscription.css";
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useRef } from "react";
+import axios from "axios";
 
 export function ConfirmationEmail() {
   const contenairimg = {
@@ -29,28 +35,108 @@ export function ConfirmationEmail() {
     background: "orange",
     height: "150px",
     padding: "50px",
-    transform: "translate3d(0,48px,0)",
+    transform: "translate3d(0,150px,0)",
   };
   const button = {
     outline: "none",
     textTransform: "capitalize",
     fontSize: "1.3rem",
     padding: "15px 23px",
-    margin: "0",
+    display: "flex",
     borderRadius: "15px",
     cursor: "pointer",
-    margin: "auto",
     color: "orange",
   };
+  const navigate = useNavigate();
+
+  const initValues = { emailconfirm: "" };
+  const [formValues, setFormValues] = useState(initValues);
+  const handleChanges = (e) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+  };
+
+  const handSubmit = (e) => {
+    e.preventDefault();
+    const firstinscription = JSON.parse(
+      localStorage.getItem("firstinscription")
+    );
+    console.log(formValues.emailconfirm);
+
+    axios
+      .put(
+        `https://caisse0.ubix-group.com/public/index.php/api/up/${firstinscription.id}`,
+        { code: formValues.emailconfirm }
+      )
+      .then(function (response) {
+        console.log(response);
+        console.log(response.data[0]);
+        if (response.data.msg1 === "bien verifier") {
+          navigate("/compteZeroNouveau");
+        } else {
+          alert("veuillez remplir le code inscrit dans votre email");
+        }
+      })
+      .catch(function (error) {
+        if (error.response.statusText === "") {
+          alert("vous n avez pas mit le code de verification");
+        }
+        console.log(error);
+      });
+  };
+  const renvoyerCode = (e) => {
+    e.preventDefault();
+    const inputemail = JSON.parse(localStorage.getItem("email"));
+    console.log(inputemail);
+    const firstinscription = JSON.parse(
+      localStorage.getItem("firstinscription")
+    );
+    console.log(firstinscription.id);
+    axios
+      .put(
+        `https://caisse0.ubix-group.com/public/index.php/api/resend/${firstinscription.id}`,
+        { email: inputemail.email }
+      )
+      .then(function (response) {
+        console.log(response);
+
+        return response;
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
   return (
     <div className="contenair">
       <ImgLogos contenairimg={contenairimg} contenairlogo={contenairlogo} />
       <div className="confirmemail">
         <p className="confirmemailmessage">
-          veuillez consulter votre email, puis entrer le code de confirmation
+          veuillez consulter vos emails ou vos spams, puis entrer le code de
+          confirmation
         </p>
-        <input type="text" className="keyemail" />
-        <Button buttoninput={button} enter="envoyer" />
+
+        <div>
+          <form onSubmit={handSubmit}>
+            <input
+              type="text"
+              name="emailconfirm"
+              className="keyemail"
+              value={formValues.email}
+              onChange={handleChanges}
+            />
+            <Button enter="Verifier" buttoninput={button} />
+          </form>
+          <div onClick={renvoyerCode} className="parentbuttonrenvoyer">
+            <p className="confirmemailmessage">
+              si vous n 'avez pas recu de code dans vos email ou vos spams
+              renvoyer le code
+            </p>
+            <button className="buttonrenvoyercodeemail">
+              renvoyer le code
+            </button>
+          </div>
+        </div>
       </div>
       <Footer Footernav={footernav} />
     </div>

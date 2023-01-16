@@ -124,6 +124,12 @@ th {
     gap: 20px;
     padding-left: 45px;
   }
+  .containhandleuserspan {
+    transform: translate3d(0, 5px, 0);
+    font-size: 15px;
+    color: black;
+    cursor: pointer;
+  }
   .invitationuser {
     display: flex;
     flex-direction: column;

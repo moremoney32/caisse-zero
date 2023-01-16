@@ -1,17 +1,27 @@
-/* .Footernav{
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    background: orange;
-    height: 150px;
-    padding: 50px;
-    transform: translate3d(0,50px,0);
-} */
+.parentFooternav {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  background: orange;
+  height: 150px;
+  padding: 50px;
+  transform: translate3d(0, 50px, 0);
+}
 .footernav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+/* .parentFooternav{
+  display: "flex",
+  flexDirection: "column",
+  gap: "50px",
+  background: "orange",
+  height: "150px",
+  padding: "50px",
+  transform: "translate3d(0,680px,0)",
+
+} */
 .navfooter {
   display: flex;
   gap: 7px;

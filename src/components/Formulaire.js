@@ -6,6 +6,8 @@ import "../css/formulaire.css";
 import { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useRef } from "react";
 
 export function Formulaire({ email, mdp, confirmMdp, enter, close }) {
   const navigate = useNavigate();
@@ -25,6 +27,9 @@ export function Formulaire({ email, mdp, confirmMdp, enter, close }) {
   const initValues = { email: "", password: "", confirmpassword: "" };
   const [formValues, setFormValues] = useState(initValues);
   const [formErrors, setFormErrors] = useState({});
+  const inputEmail = useRef(null);
+  const [isSubmit, setIsSubmit] = useState(false);
+
   const handleChanges = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
@@ -32,6 +37,15 @@ export function Formulaire({ email, mdp, confirmMdp, enter, close }) {
   const handSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validateForms(formValues));
+    setIsSubmit(true);
+    const inputactuelemail = inputEmail.current.value;
+    console.log(inputactuelemail);
+    window.localStorage.setItem(
+      "email",
+      JSON.stringify({
+        email: inputactuelemail,
+      })
+    );
   };
 
   const validateForms = (values) => {
@@ -69,6 +83,7 @@ export function Formulaire({ email, mdp, confirmMdp, enter, close }) {
         password: values.password,
         confirmpassword: values.confirmpassword,
       };
+      console.log(recuperationFormulaire);
       fetch("https://caisse0.ubix-group.com/public/index.php/api/register", {
         method: "POST",
         headers: {
@@ -83,15 +98,50 @@ export function Formulaire({ email, mdp, confirmMdp, enter, close }) {
         })
 
         .then((result) => {
-          return result;
-        })
-        .catch((error) => {
-          return console.log(error);
+          console.log(result);
+
+          // console.log(result.email[0]);
+          // window.localStorage.setItem(
+          //   "first",
+          //   JSON.stringify({
+          //     response: result.email[0],
+          //   })
+          // );
+
+          if (result.status_code === 201) {
+            console.log(true);
+            window.localStorage.setItem(
+              "firstinscription",
+              JSON.stringify({
+                id: result.id,
+              })
+            );
+          } else if (result.email[0]) {
+            alert(
+              "cet email existe deja veuillez rentrer sur la page d'accueil choisir un autre email merci"
+            );
+          }
         });
-      return navigate("/compteZeroNouveau");
-    } else {
-      return errors;
+
+      // let y = JSON.parse(localStorage.getItem("firstinscription"));
+      // console.log(y.response);
+      // if (y.response === "The email has already been taken") {
+      //   console.log(true);
+      //   return alert("rrrtr");
+      // }
+      if (
+        !values.email === false &&
+        !rejectEmail.test(values.email) === false &&
+        !values.password === false &&
+        !passworD.test(values.password) === false &&
+        !values.confirmpassword === false &&
+        values.password === values.confirmpassword
+      ) {
+        return navigate("/comfirmationEmail");
+      }
+      // return navigate("/comfirmationEmail");
     }
+    return errors;
   };
 
   return (
@@ -104,6 +154,7 @@ export function Formulaire({ email, mdp, confirmMdp, enter, close }) {
             type="text"
             name="email"
             id="email"
+            ref={inputEmail}
             placeholder="remplir l'email"
             className="keyemail"
             value={formValues.email}
@@ -114,7 +165,7 @@ export function Formulaire({ email, mdp, confirmMdp, enter, close }) {
         <div className="space">
           <label htmlFor="keyPassword">{mdp}</label>
           <input
-            type="password"
+            type="text"
             name="password"
             id="keyPassword"
             placeholder="remplir le mot de passe"
@@ -131,7 +182,7 @@ export function Formulaire({ email, mdp, confirmMdp, enter, close }) {
         <div className="space">
           <label htmlFor="confirmkeyPassword">{confirmMdp}</label>
           <input
-            type="password"
+            type="text"
             name="confirmpassword"
             id="confirmkeyPassword"
             placeholder="confirmation du mot de passe"

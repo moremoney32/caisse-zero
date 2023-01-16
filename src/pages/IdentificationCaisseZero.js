@@ -10,14 +10,14 @@ import { Footer } from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 export function IdentificationCaisseZero() {
-  const navigate = useNavigate();
-  const recuperationUser = JSON.parse(localStorage.getItem("user"));
-  console.log(recuperationUser.token);
-  useEffect(() => {
-    if (!recuperationUser.token) {
-      return navigate("/");
-    }
-  });
+  // const navigate = useNavigate();
+  // const recuperationUser = JSON.parse(localStorage.getItem("user"));
+  // console.log(recuperationUser.token);
+  // useEffect(() => {
+  //   if (!recuperationUser.token) {
+  //     return navigate("/");
+  //   }
+  // });
 
   const contenairimg = {
     width: "100%",

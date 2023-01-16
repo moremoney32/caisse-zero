@@ -54,6 +54,32 @@
 .inscriptionRight {
   width: 100%;
 }
+.verifierremail {
+  color: red;
+}
+.formverify {
+  text-align: center !important;
+  background: red;
+  margin: auto;
+}
+.parentbuttonrenvoyer {
+  transform: translate3d(0, 50px, 0);
+}
+.buttonrenvoyercodeemail {
+  outline: none;
+  bottom: 1px;
+  text-transform: capitalize;
+  font-size: 20px;
+  padding: 15px 23px;
+  border-radius: 15px;
+  cursor: pointer;
+  color: black;
+  margin: auto;
+}
+.buttonoemailconfirmation {
+  margin: auto !important;
+  transform: translate3d(0, 20px, 0);
+}
 
 @media all and (min-width: 320px) and (max-width: 767px) {
   .buttonInscriptionLeft {
@@ -107,6 +133,19 @@
     position: absolute;
     right: 40px;
     top: 400px;
+  }
+  .parentbuttonrenvoyer {
+    transform: translate3d(0, 70px, 0);
+  }
+  .buttonrenvoyercodeemail {
+    outline: none;
+    bottom: 1px;
+    text-transform: capitalize;
+    font-size: 20px;
+    padding: 15px 23px;
+    border-radius: 15px;
+    cursor: pointer;
+    color: black;
   }
 }
 @media all and (min-width: 768px) and (max-width: 1024px) {

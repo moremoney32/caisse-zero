@@ -9,14 +9,7 @@ import { useState, useEffect } from "react";
 
 export function Label({ email, mdp, close }) {
   const navigate = useNavigate();
-  // const recuperationUser = JSON.parse(localStorage.getItem("user"));
-  // console.log(recuperationUser.token);
-  //  useEffect(() => {
-  //    if (recuperationUser.token) {
-  //       return navigate("/");
 
-  //    }
-  // });
   function closeModal() {
     let bouttonLeft = document.querySelector(".buttonInscriptionLeft");
     let connect = document.querySelector(".connexionnRight");
@@ -66,12 +59,23 @@ export function Label({ email, mdp, close }) {
       !values.password === false &&
       !passworD.test(values.password) === false
     ) {
+      const login = {
+        email: values.email,
+        password: values.password,
+      };
+      console.log(login);
+      let loginid = JSON.parse(localStorage.getItem("firstinscription"));
+
       axios
-        .post("https://caisse0.ubix-group.com/public/index.php/api/login", {
-          email: values.email,
-          password: values.password,
-        })
+        .post(
+          `https://caisse0.ubix-group.com/public/index.php/api/login/${loginid.id}`,
+          {
+            email: values.email,
+            password: values.password,
+          }
+        )
         .then(function (response) {
+          console.log(response.token);
           console.log(response);
           if (response.data.status_code === 200) {
             window.localStorage.setItem(
@@ -81,12 +85,24 @@ export function Label({ email, mdp, close }) {
                 token: response.data.token,
               })
             );
+          } else if (response.data.status_code === 405) {
+            alert("svp rentrer vous inscrire a la page d accueil");
           }
         })
         .catch(function (error) {
           console.log(error);
         });
-      return navigate("/compteZeroNouveau");
+      let loginId = JSON.parse(localStorage.getItem("user"));
+
+      if (
+        loginId.token &&
+        !values.email === false &&
+        !rejectEmail.test(values.email) === false &&
+        !values.password === false &&
+        !passworD.test(values.password) === false
+      ) {
+        return navigate("/compteZeroNouveau");
+      }
     } else {
       return errors;
     }
@@ -112,7 +128,7 @@ export function Label({ email, mdp, close }) {
         <div className="space">
           <label htmlFor="keyPassword">{mdp}</label>
           <input
-            type="password"
+            type="text"
             name="password"
             id="keyPassword"
             className="password"
@@ -128,6 +144,7 @@ export function Label({ email, mdp, close }) {
         <span className="formErrors">{formErrors.password}</span>
 
         <input className="btn-submit" type="submit" value="Entrez" />
+        <span className="formErrors">{formErrors.email}</span>
 
         <NavLink to="/" className="forgetmdp">
           Mot de Passe Oublié?

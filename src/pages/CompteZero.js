@@ -12,17 +12,25 @@ import up from "../images/up.svg";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/buttonnav.css";
+import axios from "axios";
 import star from "../images/star.svg";
 import { NavLink } from "react-router-dom";
 export function CompteZero() {
   const [showed, setShowed] = useState(false);
   const navigate = useNavigate();
-  function formulaireEntreprise() {
-    let connect = document.querySelector(".connexionn");
-    let infoEntreprise = document.querySelector(".infoentreprise");
-    connect.style.display = "block";
-    infoEntreprise.style.display = "none";
-  }
+  let loginid = JSON.parse(localStorage.getItem("firstinscription"));
+  // axios
+  //   .get(
+  //     `https://caisse0.ubix-group.com/public/index.php/api/show/${loginid.id}`,
+  //     {}
+  //   )
+  //   .then(function (response) {
+  //     console.log(response);
+  //   })
+  //   .catch(function (error) {
+  //     console.log(error);
+  //   });
+
   const initValues = {
     surname: "",
     phone: "",
@@ -76,7 +84,33 @@ export function CompteZero() {
       values.nif &&
       values.rccm
     ) {
-      return navigate("/handleuser");
+      const yy = {
+        surname: values.surname,
+        phone: values.phone,
+        adresse: values.adresse,
+        logos: values.logos,
+        raisonsociale: values.raisonsociale,
+        nif: values.nif,
+        rccm: values.rccm,
+      };
+      console.log(yy);
+      axios
+        .post("https://caisse0.ubix-group.com/public/index.php/api/caisse", {
+          surname: values.surname,
+          phone: values.phone,
+          adresse: values.adresse,
+          logos: values.logos,
+          raisonsociale: values.raisonsociale,
+          nif: values.nif,
+          rccm: values.rccm,
+        })
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      // return navigate("/handleuser");
     }
     return errors;
   };
@@ -111,6 +145,7 @@ export function CompteZero() {
     setFile(URL.createObjectURL(e.target.files[0]));
   };
   const emaill = JSON.parse(localStorage.getItem("email")).email;
+
   return (
     <div className="contenair">
       <ImgLogos contenairimg={contenairimg} contenairlogo={contenairlogo} />

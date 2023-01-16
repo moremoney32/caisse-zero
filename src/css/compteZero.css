@@ -89,7 +89,7 @@
   padding: 20px;
   position: fixed;
   top: 50px;
-  left: 10px;
+  left: 50%;
 }
 @media all and (min-width: 320px) and (max-width: 767px) {
   .createcompteZeroLogos {

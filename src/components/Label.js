@@ -65,6 +65,7 @@ export function Label({ email, mdp, close }) {
       };
       console.log(login);
       let loginid = JSON.parse(localStorage.getItem("firstinscription"));
+      console.log(loginid.token);
 
       axios
         .post(
@@ -75,32 +76,25 @@ export function Label({ email, mdp, close }) {
           }
         )
         .then(function (response) {
-          console.log(response.token);
+          console.log(response.data.token);
           console.log(response);
-          if (response.data.status_code === 200) {
-            window.localStorage.setItem(
-              "user",
-              JSON.stringify({
-                id: response.data.utilisateur,
-                token: response.data.token,
-              })
-            );
-          } else if (response.data.status_code === 405) {
+
+          if (response.data.status_code === 405) {
             alert("svp rentrer vous inscrire a la page d accueil");
           }
         })
         .catch(function (error) {
           console.log(error);
         });
-      let loginId = JSON.parse(localStorage.getItem("user"));
 
       if (
-        loginId.token &&
+        loginid.token &&
         !values.email === false &&
         !rejectEmail.test(values.email) === false &&
         !values.password === false &&
         !passworD.test(values.password) === false
       ) {
+        console.log(true);
         return navigate("/compteZeroNouveau");
       }
     } else {
@@ -128,7 +122,7 @@ export function Label({ email, mdp, close }) {
         <div className="space">
           <label htmlFor="keyPassword">{mdp}</label>
           <input
-            type="text"
+            type="password"
             name="password"
             id="keyPassword"
             className="password"

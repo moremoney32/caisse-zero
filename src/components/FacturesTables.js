@@ -1,5 +1,5 @@
 /****
- * composant qui gere le tableau des facture
+ * composant qui gere le tableau des factures
  */
 import "../css/dettesCreances.css";
 export function FacturesTables({

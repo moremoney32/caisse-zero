@@ -87,20 +87,6 @@ export function CompteZero() {
       values.email &&
       !rejectEmail.test(values.email) === false
     ) {
-      // console.log(loginid.token);
-      const h = {
-        nom_prenom: values.surname,
-        telephone: values.phone,
-        adresse: values.adresse,
-        logo: values.logos,
-        email: values.email,
-        raison_social: values.raisonsociale,
-        nif: values.nif,
-        rccm: values.rccm,
-        id: loginid.id,
-        token: loginid.token,
-      };
-      console.log(h);
       axios
         .post("https://caisse0.ubix-group.com/public/index.php/api/caisse", {
           nom_prenom: values.surname,

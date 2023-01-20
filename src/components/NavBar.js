@@ -9,27 +9,6 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
 export function NavBar() {
-  // const [showed, setShowed] = useState(false);
-
-  // const contenairimg ={
-
-  //   width: '100%',
-  //   height: '100%',
-  //   objectFit: 'cover',
-  //   borderRadius: '15px'
-
-  // }
-  // const contenairlogo ={
-  //   position: 'absolute',
-  //   left: '20px',
-  //   top: '20px',
-  //   width: '300px',
-  //   height: '300px',
-  //   objectFit: 'cover',
-  //   boxShadow:' 1px 13px 24px -22px rgba(0,0,0,0.9)',
-  //   borderRadius: '50%',
-
-  // }
   return (
     <div className="contenair">
       {/* <ImgLogos contenairimg={contenairimg} contenairlogo={contenairlogo} /> */}
